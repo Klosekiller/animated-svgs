@@ -14,10 +14,33 @@
      on the left page, then the book rests. Plays once; at the end everything snaps
      back to the starting layout, which looks identical. */
   .turn { transform-origin: 28.52px 0; }
+  /* Thin outline in the background color so each moving page (the turning pages and
+     the next page that lifts after them) stays distinct from
+     the pages it passes over */
+  .turn, .next { stroke: #002852; stroke-width: 0.4; stroke-linejoin: round; }
   /* Hover, or loading the file with ?play (the preview page's replay button), starts the animation. */
-  svg:hover .a, svg.is-playing .a { animation-name: turn-a; }
-  svg:hover .b, svg.is-playing .b { animation-name: turn-b; }
-  svg:hover .c, svg.is-playing .c { animation-name: turn-c; }
+  svg:hover .a, svg.is-playing .a { animation-name: turn-a, var(--swap); }
+  svg:hover .b, svg.is-playing .b { animation-name: turn-b, var(--swap); }
+  svg:hover .c, svg.is-playing .c { animation-name: turn-c, var(--swap); }
+
+  /* SVG has no z-index, so each turning page has two copies: a right copy, stacked so
+     the first page to turn is on top, and a left copy, stacked so the last page to
+     land is on top, like a real book. Every copy runs the same turn; at the moment a
+     page is edge-on at the spine (8%, 14%, 20% of the turn) its right copy hides and
+     its left copy shows, until the turn ends and everything snaps back. */
+  .turn {
+    animation-duration: 3s, var(--rest);
+    animation-delay: 0s, var(--flip);
+    animation-timing-function: ease-in-out, linear;
+    animation-fill-mode: forwards, none;
+  }
+  .a { --flip: 0.24s; --rest: 2.76s; }
+  .b { --flip: 0.42s; --rest: 2.58s; }
+  .c { --flip: 0.6s;  --rest: 2.4s; }
+  .right { --swap: hide; }
+  .left  { --swap: show; opacity: 0; }
+  @keyframes hide { from, to { opacity: 0; } }
+  @keyframes show { from, to { opacity: 1; } }
 
   @keyframes turn-a {
     0%, 2%       { transform: translateY(0) scaleX(1); }
@@ -57,10 +80,14 @@
 <path d="M50.4988 6.33398V39.958L28.4894 46.5146L6.58421 39.958V6.33398H0V50.3845H35.2524L49.2773 57.0006V50.4143H57.0458V6.33398H50.4988Z" fill="white"/>
 <!-- Left page -->
 <path d="M26.8436 43.2468V6.33333L9.42969 0V37.9256L26.8436 43.2468Z" fill="white"/>
+<!-- Turning pages once landed on the left, bottom to top (c lands last) -->
+<path class="turn left a" d="M47.617 37.9256V0L30.2031 6.33333V43.2468L47.617 37.9256Z" fill="white"/>
+<path class="turn left b" d="M47.617 37.9256V0L30.2031 6.33333V43.2468L47.617 37.9256Z" fill="white"/>
+<path class="turn left c" d="M47.617 37.9256V0L30.2031 6.33333V43.2468L47.617 37.9256Z" fill="white"/>
 <!-- Next right page (hidden behind the turning pages until they move) -->
 <path class="next" d="M47.617 37.9256V0L30.2031 6.33333V43.2468L47.617 37.9256Z" fill="white"/>
-<!-- Turning right pages, bottom to top (a turns first) -->
-<path class="turn c" d="M47.617 37.9256V0L30.2031 6.33333V43.2468L47.617 37.9256Z" fill="white"/>
-<path class="turn b" d="M47.617 37.9256V0L30.2031 6.33333V43.2468L47.617 37.9256Z" fill="white"/>
-<path class="turn a" d="M47.617 37.9256V0L30.2031 6.33333V43.2468L47.617 37.9256Z" fill="white"/>
+<!-- Turning pages before they cross the spine, bottom to top (a turns first) -->
+<path class="turn right c" d="M47.617 37.9256V0L30.2031 6.33333V43.2468L47.617 37.9256Z" fill="white"/>
+<path class="turn right b" d="M47.617 37.9256V0L30.2031 6.33333V43.2468L47.617 37.9256Z" fill="white"/>
+<path class="turn right a" d="M47.617 37.9256V0L30.2031 6.33333V43.2468L47.617 37.9256Z" fill="white"/>
 </svg>
