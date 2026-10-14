@@ -74,20 +74,22 @@
 </head>
 <body>
     <h1>Logo Mark Preview</h1>
-    <p>Hover over a logo to play the page turn. Move off and hover again to replay.</p>
+    <p>Use each Replay button to play an animation. Hover over either logo mark to play its page turn, too.</p>
 
     <section>
         <h2>Original (white)</h2>
         <div class="stage stage--dark">
-            <object type="image/svg+xml" data="logo-mark-animated.svg" aria-label="Logo mark, white"></object>
+            <object id="logo-white" type="image/svg+xml" data="logo-mark-animated.svg" aria-label="Logo mark, white"></object>
         </div>
+        <button type="button" id="replay-logo-white">Replay</button>
     </section>
 
     <section>
         <h2>Color version</h2>
         <div class="stage stage--light">
-            <object type="image/svg+xml" data="logo-mark-animated-color.svg" aria-label="Logo mark, color"></object>
+            <object id="logo-color" type="image/svg+xml" data="logo-mark-animated-color.svg" aria-label="Logo mark, color"></object>
         </div>
+        <button type="button" id="replay-logo-color">Replay</button>
     </section>
 
     <section>
@@ -115,15 +117,28 @@
     </section>
 
     <script>
-        // Reloading an image restarts its CSS animation
-        function replay(buttonId, imgId) {
-            const img = document.getElementById(imgId);
-            const src = img.getAttribute("src").split("?")[0];
+        function replay(buttonId, graphicId) {
+            const graphic = document.getElementById(graphicId);
             document.getElementById(buttonId).addEventListener("click", () => {
-                img.src = `${src}?${Date.now()}`;
+                if (graphic instanceof HTMLObjectElement) {
+                    const svg = graphic.contentDocument?.documentElement;
+                    if (!svg) {
+                        throw new Error(`Unable to access SVG animation: ${graphicId}`);
+                    }
+                    svg.classList.remove("is-playing");
+                    void svg.getBoundingClientRect();
+                    svg.classList.add("is-playing");
+                } else if (graphic instanceof HTMLImageElement) {
+                    const src = graphic.getAttribute("src").split("?")[0];
+                    graphic.src = `${src}?${Date.now()}`;
+                } else {
+                    throw new Error(`Unable to find animated graphic: ${graphicId}`);
+                }
             });
         }
 
+        replay("replay-logo-white", "logo-white");
+        replay("replay-logo-color", "logo-color");
         replay("replay-ubs", "ubs");
         replay("replay-nff", "nff");
         replay("replay-friends", "friends");

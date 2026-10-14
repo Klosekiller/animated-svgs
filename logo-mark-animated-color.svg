@@ -12,10 +12,10 @@
      on the left page, then the book rests. Plays once; at the end everything snaps
      back to the starting layout, which looks identical. */
   .turn { transform-origin: 28.52px 0; }
-  /* Only animate while the logo is hovered; each new hover replays it once */
-  svg:hover .a { animation-name: turn-a; }
-  svg:hover .b { animation-name: turn-b; }
-  svg:hover .c { animation-name: turn-c; }
+  /* Hover or the preview page's replay button starts the animation. */
+  svg:hover .a, svg.is-playing .a { animation-name: turn-a; }
+  svg:hover .b, svg.is-playing .b { animation-name: turn-b; }
+  svg:hover .c, svg.is-playing .c { animation-name: turn-c; }
 
   /* Each page swaps to the left-page color while it is edge-on at the spine (the fill
      keyframes are a hard step there), so it lands as a left page; at 100% it snaps
@@ -51,7 +51,7 @@
   /* Next page is hinged at the spine: it starts tucked behind the last turning page,
      its outer edge lifts up as that page clears, then drops flat */
   .next { transform-origin: 30.2px 24.8px; }
-  svg:hover .next { animation-name: next; }
+  svg:hover .next, svg.is-playing .next { animation-name: next; }
   @keyframes next {
     0%, 14%      { transform: skewY(0deg) scale(0.6, 0.88); }
     20%          { transform: skewY(-12deg) scale(0.7, 0.9); }
