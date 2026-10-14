@@ -121,12 +121,12 @@
         // Matches the 3s animation-duration in the hover logo marks.
         const LOGO_ANIMATION_MS = 3000;
 
-        // Replays a hover logo mark by loading a fresh copy of the file as #play, which
-        // makes svg:target start the animation. Reaching into the <object> with
+        // Replays a hover logo mark by loading a fresh copy of the file with ?play, which
+        // makes the SVG start its animation. Reaching into the <object> with
         // contentDocument fails when the page is opened from file://, so this avoids it.
         // Each copy loads hidden and is swapped in on load so the logo never blanks.
         // Once the animation ends (its end frame matches the start) the file is
-        // reloaded without #play so hover can play it again.
+        // reloaded without ?play so hover can play it again.
         function replayObject(graphic) {
             const src = graphic.getAttribute("data").split(/[?#]/)[0];
             let pending = null;
@@ -152,7 +152,7 @@
 
             return () => {
                 clearTimeout(resetTimer);
-                swapIn(`${src}?${Date.now()}#play`, () => {
+                swapIn(`${src}?play=${Date.now()}`, () => {
                     resetTimer = setTimeout(() => swapIn(src), LOGO_ANIMATION_MS + 100);
                 });
             };
