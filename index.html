@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap">
+    <title>Logo Mark Preview</title>
+    <!-- Preview page only. The marks use <object> rather than <img> so the svg:hover animation can fire. -->
+    <style>
+        body {
+            margin: 0;
+            padding: 3rem 1rem;
+            font-family: "Jost", sans-serif;
+            color: #002852;
+            background-color: #f0f0f0;
+        }
+
+        h1,
+        h2 {
+            margin: 0 0 1rem;
+            text-align: center;
+        }
+
+        p {
+            text-align: center;
+        }
+
+        section {
+            max-width: 60rem;
+            margin: 0 auto 3rem;
+        }
+
+        .stage {
+            display: grid;
+            place-items: center;
+            padding: 3rem 2rem;
+        }
+
+        .stage--dark {
+            background-color: #002852;
+        }
+
+        .stage--light {
+            background-color: #ffffff;
+        }
+
+        .stage object {
+            display: block;
+            width: 232px;
+            height: 228px;
+        }
+
+        .stage .ubs {
+            display: block;
+            width: 100%;
+            max-width: 273px;
+            height: auto;
+        }
+
+        button {
+            display: block;
+            margin: 1rem auto 0;
+            padding: 0.6rem 1.5rem;
+            font: inherit;
+            font-weight: 700;
+            color: #ffffff;
+            background-color: #002852;
+            border: 0;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Logo Mark Preview</h1>
+    <p>Hover over a logo to play the page turn. Move off and hover again to replay.</p>
+
+    <section>
+        <h2>Original (white)</h2>
+        <div class="stage stage--dark">
+            <object type="image/svg+xml" data="logo-mark-animated.svg" aria-label="Logo mark, white"></object>
+        </div>
+    </section>
+
+    <section>
+        <h2>Color version</h2>
+        <div class="stage stage--light">
+            <object type="image/svg+xml" data="logo-mark-animated-color.svg" aria-label="Logo mark, color"></object>
+        </div>
+    </section>
+
+    <section>
+        <h2>Used Book Sales (plays on load)</h2>
+        <div class="stage stage--light">
+            <img id="ubs" class="ubs" src="used-book-sales-animated.svg" alt="Used Book Sales" width="273" height="322">
+        </div>
+        <button type="button" id="replay-ubs">Replay</button>
+    </section>
+
+    <section>
+        <h2>Next Five Faves (plays on load)</h2>
+        <div class="stage stage--light">
+            <img id="nff" class="ubs" src="next-five-faves-animated.svg" alt="Next Five Faves" width="273" height="273">
+        </div>
+        <button type="button" id="replay-nff">Replay</button>
+    </section>
+
+    <section>
+        <h2>Friends logo (plays on load)</h2>
+        <div class="stage stage--light">
+            <img id="friends" src="friends-logo-animated.svg" alt="Friends of the Greenville County Library System" width="469" height="163" style="display:block;width:100%;max-width:469px;height:auto">
+        </div>
+        <button type="button" id="replay-friends">Replay</button>
+    </section>
+
+    <script>
+        // Reloading an image restarts its CSS animation
+        function replay(buttonId, imgId) {
+            const img = document.getElementById(imgId);
+            const src = img.getAttribute("src").split("?")[0];
+            document.getElementById(buttonId).addEventListener("click", () => {
+                img.src = `${src}?${Date.now()}`;
+            });
+        }
+
+        replay("replay-ubs", "ubs");
+        replay("replay-nff", "nff");
+        replay("replay-friends", "friends");
+    </script>
+</body>
+</html>

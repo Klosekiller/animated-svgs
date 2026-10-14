@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 537.41 538" aria-hidden="true" role="img" class="svg-icon svg-icon-next-five-faves img-float-start">
+  <title>next five faves logo</title>
+  <style>
+    /* Orbit intro, plays once on load:
+       1. the purple circle pops in
+       2. the blue ring spins into orbit, its segments lighting up clockwise, while NEXT pops in
+       3. the white 5 slams down onto the circle, which thumps from the impact
+       4. FAVES pops in, so the logo reads in order: Next 5 Faves */
+    .svg-icon-next-five-faves .ring {
+      transform-box: view-box;
+      transform-origin: 268.7px 269px;
+      animation: nff-orbit 1.4s cubic-bezier(0.2, 0.8, 0.2, 1) 0.1s both;
+    }
+    .svg-icon-next-five-faves .ring path { animation: nff-fade 0.3s ease-out both; }
+    .svg-icon-next-five-faves .ring path:nth-child(1) { animation-delay: 0.2s; }
+    .svg-icon-next-five-faves .ring path:nth-child(2) { animation-delay: 0.3s; }
+    .svg-icon-next-five-faves .ring path:nth-child(3) { animation-delay: 0.4s; }
+    .svg-icon-next-five-faves .ring path:nth-child(4) { animation-delay: 0.5s; }
+    .svg-icon-next-five-faves .ring path:nth-child(5) { animation-delay: 0.6s; }
+    .svg-icon-next-five-faves .ring path:nth-child(6) { animation-delay: 0.7s; }
+    .svg-icon-next-five-faves .ring path:nth-child(7) { animation-delay: 0.8s; }
+    .svg-icon-next-five-faves .ring path:nth-child(8) { animation-delay: 0.9s; }
+
+    .svg-icon-next-five-faves .dot,
+    .svg-icon-next-five-faves .five,
+    .svg-icon-next-five-faves .letters path {
+      transform-box: fill-box;
+      transform-origin: 50% 50%;
+    }
+    /* The thump runs after the pop and only while active, so the pop's end state holds */
+    .svg-icon-next-five-faves .dot { animation: nff-pop 0.7s ease-out both, nff-thump 0.35s ease-out 1.72s; }
+    .svg-icon-next-five-faves .five { animation: nff-slam 0.6s ease-in both; animation-delay: 1.3s; }
+
+    .svg-icon-next-five-faves .letters path { animation: nff-letter 0.5s ease-out both; }
+    /* N E X T */
+    .svg-icon-next-five-faves .letters path:nth-child(1) { animation-delay: 0.7s; }
+    .svg-icon-next-five-faves .letters path:nth-child(2) { animation-delay: 0.78s; }
+    .svg-icon-next-five-faves .letters path:nth-child(3) { animation-delay: 0.86s; }
+    .svg-icon-next-five-faves .letters path:nth-child(4) { animation-delay: 0.94s; }
+    /* F A V E S */
+    .svg-icon-next-five-faves .letters path:nth-child(5) { animation-delay: 1.95s; }
+    .svg-icon-next-five-faves .letters path:nth-child(6) { animation-delay: 2.03s; }
+    .svg-icon-next-five-faves .letters path:nth-child(7) { animation-delay: 2.11s; }
+    .svg-icon-next-five-faves .letters path:nth-child(8) { animation-delay: 2.19s; }
+    .svg-icon-next-five-faves .letters path:nth-child(9) { animation-delay: 2.27s; }
+
+    @keyframes nff-orbit {
+      0%   { transform: rotate(-150deg) scale(0.7); }
+      100% { transform: rotate(0deg) scale(1); }
+    }
+    @keyframes nff-fade {
+      0%   { opacity: 0; }
+      100% { opacity: 1; }
+    }
+    @keyframes nff-pop {
+      0%   { transform: scale(0); }
+      60%  { transform: scale(1.12); }
+      80%  { transform: scale(0.96); }
+      100% { transform: scale(1); }
+    }
+    @keyframes nff-thump {
+      0%   { transform: scale(1); }
+      40%  { transform: scale(1.07); }
+      100% { transform: scale(1); }
+    }
+    /* Drops from big and tilted (close to the viewer) down onto the circle, then recoils */
+    @keyframes nff-slam {
+      0%   { transform: scale(3.2) rotate(-18deg); opacity: 0; }
+      20%  { opacity: 1; }
+      70%  { transform: scale(0.86) rotate(3deg); animation-timing-function: ease-out; }
+      85%  { transform: scale(1.06) rotate(-1deg); }
+      100% { transform: scale(1) rotate(0deg); opacity: 1; }
+    }
+    @keyframes nff-letter {
+      0%   { transform: scale(0) rotate(-25deg); opacity: 0; }
+      60%  { transform: scale(1.2) rotate(6deg); opacity: 1; }
+      80%  { transform: scale(0.95) rotate(-2deg); }
+      100% { transform: scale(1) rotate(0deg); opacity: 1; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .svg-icon-next-five-faves *,
+      .svg-icon-next-five-faves .ring path,
+      .svg-icon-next-five-faves .letters path { animation: none; }
+    }
+  </style>
+  <!-- Ring segments, clockwise from the top -->
+  <g class="ring" fill="#0d84c7">
+    <path d="M248.25.74A267.16 267.16 0 0070.14 87.2Q64.37 93.51 59 100.12c-4.59 5.68-3.17 13.13 3.23 16.64l.25.13a11 11 0 0013.81-2.7q4.91-6.1 10.25-11.93C142.13 41.65 223 12.56 307.42 25.14a235.26 235.26 0 0190.13 33.38C452.09 92.71 489.67 143.71 506 202.1a11 11 0 0013 7.8l.21-.05a11 11 0 008.23-13.74 266.76 266.76 0 00-68.7-117.24A269.93 269.93 0 00248.25.74z"></path>
+    <path d="M515.13 272.33a244.49 244.49 0 01-38.33 128.86 11 11 0 002 14l.16.15a11 11 0 0016.67-2.23 266.54 266.54 0 0041.77-140.57 11 11 0 00-11.79-11h-.29a11 11 0 00-10.19 10.79z"></path>
+    <path d="M438.42 477.51q8.59-7 16.65-14.82a11 11 0 00-.25-16l-.21-.19a11 11 0 00-15 .18q-7.29 7-15.07 13.4a11 11 0 00-3.14 13.06l.12.27a11 11 0 0016.9 4.1z"></path>
+    <path d="M361.67 505.92v.32a11 11 0 0015.35 9q3.45-1.53 6.85-3.15a11 11 0 005.34-14.31l-.12-.28a11 11 0 00-14.77-5.5q-3 1.44-6.09 2.79a11 11 0 00-6.56 11.13z"></path>
+    <path d="M279.12 515.48a245 245 0 01-133.84-32.62 11.12 11.12 0 00-13.93 2.34 11.13 11.13 0 002.75 16.94 267.11 267.11 0 00146 35.6 270.89 270.89 0 0034.21-3.66 10.92 10.92 0 009.09-11.32v-.32a10.82 10.82 0 00-13-10.29 251.28 251.28 0 01-31.28 3.33z"></path>
+    <path d="M85.62 434.71a245 245 0 01-36.88-53.18 11 11 0 00-14.1-5.11l-.21.09a11 11 0 00-5.54 15.19 267.63 267.63 0 0040.23 58 11.07 11.07 0 0015.66.71l.16-.15a11 11 0 00.68-15.55z"></path>
+    <path d="M28.43 326.41q-1.82-7.61-3.14-15.35a11 11 0 00-11-9.1H14a11 11 0 00-10.7 12.85q1.46 8.46 3.42 16.76a11 11 0 0015 7.58l.21-.09a11 11 0 006.5-12.65z"></path>
+    <path d="M24.93 154.4A266.55 266.55 0 000 250.74a11 11 0 0011.2 11.73h.23a11 11 0 0010.8-10.3A244.53 244.53 0 0145.05 164a11 11 0 00-4.54-14.32l-.21-.11a11 11 0 00-15.37 4.83z"></path>
+  </g>
+  <circle class="dot" cx="270.62" cy="268.01" r="107.48" fill="#bf4097"></circle>
+  <!-- NEXT across the top, FAVES across the bottom -->
+  <g class="letters" fill="#41c3dc">
+    <!-- N -->
+    <path d="M115.93 127.71l3-2.74a9 9 0 018.72-1.92L161 133.39a132.35 132.35 0 0113 5.18l.15-.13s-5.93-5.34-9-8.78l-17-18.85a9 9 0 01.64-12.74 9 9 0 0112.74.65L198.78 140a9 9 0 01-.64 12.74l-3 2.69a9 9 0 01-8.69 1.93l-33.34-10.22a131.73 131.73 0 01-13-5.18l-.16.13s5.93 5.34 9 8.78l17 18.78a9 9 0 01-.65 12.73 9 9 0 01-12.74-.64l-37.31-41.3a9 9 0 01.68-12.73z"></path>
+    <!-- E -->
+    <path d="M219.15 66.4l31.47-4.89a7.73 7.73 0 018.83 6.49 7.74 7.74 0 01-6.45 8.79l-20.16 3.14 2.06 13.24 14.56-2.27a7.74 7.74 0 018.83 6.45 7.73 7.73 0 01-6.45 8.83l-14.56 2.26 2.13 13.75 21.59-3.36a7.74 7.74 0 018.83 6.45 7.73 7.73 0 01-6.45 8.83l-32.63 5.07a6.86 6.86 0 01-7.84-5.72l-9.25-59.52a6.6 6.6 0 015.49-7.54z"></path>
+    <!-- X -->
+    <path d="M311.26 102.93L305 75.58a8.63 8.63 0 0111.12-10.12 8.63 8.63 0 015.8 6.74l3.34 22.22.2.07s3.34-3.89 7.28-7.59l8.74-8.28a8.6 8.6 0 018.64-1.93A8.63 8.63 0 01353 91.45l-21.38 18.2 6.38 27.11a8.44 8.44 0 01-10.86 10 8.46 8.46 0 01-5.66-6.49l-3.7-22.54-.2-.06s-3.28 3.69-7.18 7.28l-9.23 8.63a8.42 8.42 0 01-8.38 1.84A8.41 8.41 0 01290 121z"></path>
+    <!-- T -->
+    <path d="M396.92 122l-9.51-11.12a7.72 7.72 0 01.85-10.9 7.72 7.72 0 0110.9.85l30.75 35.94a7.72 7.72 0 01-.85 10.9 7.72 7.72 0 01-10.9-.85l-9.51-11.11-37.4 32a9 9 0 01-12.71-1 9 9 0 011-12.72z"></path>
+    <!-- F -->
+    <path d="M144.4 326.56l15.91 25.06a7.73 7.73 0 01-2.38 10.67 7.73 7.73 0 01-10.67-2.38l-10.39-16.36-13.05 8.29 7.9 12.45a7.72 7.72 0 01-2.38 10.71 7.72 7.72 0 01-10.67-2.38l-7.9-12.44-15.44 9.81a9 9 0 01-12.45-2.78 9 9 0 012.78-12.44l48.07-30.54a7.73 7.73 0 0110.67 2.33z"></path>
+    <!-- A -->
+    <path d="M177.11 441.14l-19.79-11.68-6.95 6.59a8.65 8.65 0 01-10.37 1.16 8.62 8.62 0 01-1.23-14l42.69-36.7a13.22 13.22 0 0115.36-1.36 13.23 13.23 0 016.23 14.1l-11.45 55.12a8.65 8.65 0 01-12.86 5.68 8.65 8.65 0 01-4-9.57zm11.12-41.55s-5.51 6.09-9 9.4l-10.92 10.19 12.52 7.39 3.73-14.44c1.2-4.67 3.87-12.43 3.87-12.43z"></path>
+    <!-- V -->
+    <path d="M246 404.8h.27a9 9 0 018.57 6.32l11 35.63c1.44 4.64 2.78 11.86 2.78 11.86h.21s1.34-7.22 2.78-11.85l11.23-35.67a9 9 0 018.56-6.28 9 9 0 018.47 12l-19.66 55.74a9 9 0 01-8.47 6h-6.04a9 9 0 01-8.46-6l-19.71-55.74A9 9 0 01246 404.8z"></path>
+    <!-- E -->
+    <path d="M327.8 393.84l27.05-16.68a7.73 7.73 0 0110.64 2.53 7.74 7.74 0 01-2.49 10.64L345.6 401l7 11.41 12.58-7.76a7.7 7.7 0 0110.58 2.52v.07a7.68 7.68 0 01-2.51 10.58l-12.58 7.75 7.3 11.84 18.7-11.41a7.69 7.69 0 0110.58 2.51l.05.07a7.7 7.7 0 01-2.51 10.58l-28.37 17.44a6.6 6.6 0 01-9.09-2.15L325.62 403a6.66 6.66 0 012.18-9.16z"></path>
+    <!-- S -->
+    <path d="M427.2 385.06a8.43 8.43 0 013.24-10.85A24.38 24.38 0 00439 366c1.85-3.22 2.6-7.42-1.24-9.63-7.59-4.37-23.87 24.56-43.52 13.26-11.8-6.78-13.87-21.17-6.58-33.85a38.16 38.16 0 0111.27-12.55 8.42 8.42 0 0111.85 2.47 8.38 8.38 0 01-2.09 11.37 23 23 0 00-6.74 7.15c-1.85 3.22-2.48 7.62 1.1 9.67 8 4.62 23.15-25 43.34-13.36 10.64 6.11 15.17 19.53 6.9 33.92a39.78 39.78 0 01-13.93 14.33 8.48 8.48 0 01-12.08-3.59z"></path>
+  </g>
+  <path class="five" d="M235.48 309.64a14.44 14.44 0 0118.76-5.28 33.85 33.85 0 0015.06 3.91c8.39 0 17.84-5.17 17.84-15.7 0-10-5.67-16-20.87-16.86-6.17-.35-17.37-.38-24.83-.36a7 7 0 01-7-7.42l3.4-53.42a6.94 6.94 0 016.92-6.5h51.47a13.38 13.38 0 0113.38 13.38 13.38 13.38 0 01-13.38 13.38h-30.85l-1.38 15.7s4.73-.18 9.54-.18c30.33 0 45.67 18.91 45.67 41.92 0 26.41-19.44 45.49-47.27 45.49a65 65 0 01-31.01-7.7 14.47 14.47 0 01-5.45-20.39z" fill="#fff"></path>
+</svg>

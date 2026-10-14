@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 273.23 322.09" aria-hidden="true" role="img" class="svg-image">
+  <title>
+    Used Book Sales Logo
+  </title>
+  <style>
+    /* Each letter drops in from above the top edge, picking up speed like it's falling,
+       squashes flat when it hits its spot, recoils back up, and settles with a smaller
+       bounce. Letters fall one after another, row by row, left to right. Plays once on load. */
+    .svg-image g > path {
+      transform-box: fill-box;
+      transform-origin: 50% 100%;
+      animation: drop 1s both;
+    }
+
+    @keyframes drop {
+      0%   { transform: translateY(-340px) scale(0.96, 1.08); animation-timing-function: cubic-bezier(0.55, 0, 1, 0.45); }
+      50%  { transform: translateY(0) scale(1.14, 0.8); animation-timing-function: ease-out; }
+      66%  { transform: translateY(-18px) scale(0.95, 1.06); animation-timing-function: ease-in; }
+      80%  { transform: translateY(0) scale(1.05, 0.95); animation-timing-function: ease-out; }
+      90%  { transform: translateY(-4px) scale(1, 1); animation-timing-function: ease-in; }
+      100% { transform: translateY(0) scale(1, 1); }
+    }
+
+    /* U S E D */
+    .svg-image g > path:nth-child(1)  { animation-delay: 0s; }
+    .svg-image g > path:nth-child(2)  { animation-delay: 0.12s; }
+    .svg-image g > path:nth-child(3)  { animation-delay: 0.24s; }
+    .svg-image g > path:nth-child(4)  { animation-delay: 0.36s; }
+    /* B O O K */
+    .svg-image g > path:nth-child(5)  { animation-delay: 0.6s; }
+    .svg-image g > path:nth-child(6)  { animation-delay: 0.72s; }
+    .svg-image g > path:nth-child(7)  { animation-delay: 0.84s; }
+    .svg-image g > path:nth-child(8)  { animation-delay: 0.96s; }
+    /* S A L E S */
+    .svg-image g > path:nth-child(9)  { animation-delay: 1.2s; }
+    .svg-image g > path:nth-child(10) { animation-delay: 1.32s; }
+    .svg-image g > path:nth-child(11) { animation-delay: 1.44s; }
+    .svg-image g > path:nth-child(12) { animation-delay: 1.56s; }
+    .svg-image g > path:nth-child(13) { animation-delay: 1.68s; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .svg-image g > path { animation: none; }
+    }
+  </style>
+  <g style="isolation:isolate">
+    <path fill="#0d84c7" d="M75.7 10.82a2.25 2.25 0 012.3 2.27v49.56c0 23.62-12.68 36-36.83 36-23.89 0-36.57-12.41-36.84-36V7a2.34 2.34 0 012.24-2.28h23A2.25 2.25 0 0131.79 7v58.05c0 6.14 3.47 9.74 9.35 9.74s9.34-3.6 9.34-9.61V13.09a2.34 2.34 0 012.27-2.27z" style="fill:#0d84c7" opacity=".85"></path>
+    <path fill="#fbae44" d="M76.89 79.84c.4-1.33 1.34-1.73 2.4-1.06 6.14 3.46 13.48 6 18.55 6.4 4.28 0 7.08-2 7.08-5.07 0-7.87-37.51-7.48-37.51-36.57 0-17.88 13.49-29.76 33.77-29.76 9.48 0 21.49 3.87 29.9 9.61 1.06.66 1.46 1.73 1.06 2.4l-8.4 18.82c-.4 1.33-1.34 1.73-2.41 1.07-6.53-3.74-14.14-6.55-18.81-6.94-4.14 0-6.81 1.86-6.81 4.8 0 7.87 37.77 7.34 37.77 36.7 0 17.75-13.75 29.63-34.3 29.63-11.21 0-23-3.47-29.63-8.81-1.07-.8-1.47-1.73-1.07-2.4z" style="fill:#fbae44"></path>
+    <path fill="#bf4097" d="M200.56 73.72a1.93 1.93 0 012 1.74v20.42a2 2 0 01-2 1.87H131c-.94 0-1.87-1.07-2.14-2V7.53a1.69 1.69 0 011.87-1.87h57a2.06 2.06 0 012.13 1.87v20.15a2 2 0 01-2.13 2h-31.14v10.55h28.29a1.6 1.6 0 011.74 1.77l-.08 18.68a2.36 2.36 0 01-2.27 1.74h-27.68v11.3z" style="fill:#bf4097"></path>
+    <path fill="#42c4dd" d="M225.25 0c28.29 0 47.11 18.29 47.11 46.05 0 27.49-18.82 46-47.11 46h-31a2 2 0 01-1.87-2V2a2 2 0 011.87-2z" style="fill:#42c4dd"></path>
+    <path fill="#0d84c7" d="M47 122.71c16.35 0 27.21 9.73 27.21 24.34 0 9-4.37 15.6-11.11 17.6 7.86 2 13 9.48 13 19.84-.1 14.61-10.92 24.34-27.1 24.34H9.39a1.78 1.78 0 01-1.75-1.75v-82.5a1.89 1.89 0 011.75-1.87z" opacity=".85" style="mix-blend-mode:multiply"></path>
+    <path fill="#bf4097" d="M101.2 215.92c-26.59 0-44.32-18-44.32-44.81 0-27.08 17.73-45.06 44.32-45.06s44.31 18 44.31 45.06c0 26.89-17.73 44.81-44.31 44.81z" style="mix-blend-mode:multiply"></path>
+    <path fill="#42c4dd" d="M162.81 206c-24.92 0-41.54-16.85-41.54-42 0-25.39 16.62-42.24 41.54-42.24s41.53 16.85 41.53 42.24c0 25.16-16.61 42-41.53 42z" style="mix-blend-mode:multiply"></path>
+    <path fill="#0d84c7" d="M273 210.22c.62.87.12 1.5-.88 1.5h-29a3.41 3.41 0 01-2.62-1.5l-19.29-35.67v31a1.82 1.82 0 01-1.87 1.75h-22.1a1.88 1.88 0 01-1.74-1.75v-87.61a1.9 1.9 0 011.74-1.87h22.1a1.84 1.84 0 011.87 1.87v33l15-28.33a3.46 3.46 0 012.87-1.5h27.33c1 0 1.38.62.88 1.5l-24.74 39.59z" opacity=".85" style="mix-blend-mode:multiply"></path>
+    <path fill="#fbae44" d="M8.86 294c.38-1.25 1.25-1.62 2.25-1 5.74 3.25 12.61 5.62 17.35 6 4 0 6.61-1.87 6.61-4.74 0-7.36-35.07-7-35.07-34.2 0-16.73 12.61-27.84 31.58-27.84 8.86 0 20.1 3.62 28 9 1 .63 1.37 1.62 1 2.25l-7.86 17.6c-.38 1.25-1.25 1.62-2.25 1-6.12-3.5-13.23-6.12-17.6-6.49-3.87 0-6.37 1.74-6.37 4.49 0 7.36 35.33 6.86 35.33 34.33 0 16.6-12.86 27.71-32.08 27.71-10.49 0-21.47-3.25-27.71-8.24-1-.75-1.38-1.62-1-2.25z" style="mix-blend-mode:multiply"></path>
+    <path fill="#42c4dd" d="M130.76 313.76a1.12 1.12 0 01-1.12 1.62h-24.71a2.91 2.91 0 01-2.63-1.62l-3.74-13.11H75.09l-3.74 13.11a2.91 2.91 0 01-2.62 1.62H44a1.12 1.12 0 01-1.12-1.62l28.22-82.89a3.79 3.79 0 013-1.62h25.46a3.78 3.78 0 013 1.62z" style="mix-blend-mode:multiply"></path>
+    <path fill="#0d84c7" d="M174.46 297.74a1.68 1.68 0 011.62 1.75v19a2.14 2.14 0 01-2 1.74h-53.91a1.9 1.9 0 01-1.88-1.74V236a1.92 1.92 0 011.88-1.87h22.09a1.91 1.91 0 011.87 1.87v61.78z" opacity=".85" style="mix-blend-mode:multiply"></path>
+    <path fill="#fbae44" d="M218.64 292.91a1.81 1.81 0 011.88 1.62v19.1a1.91 1.91 0 01-1.88 1.75h-58c-.87 0-1.74-1-2-1.87V231a1.59 1.59 0 011.75-1.75h63.32a1.93 1.93 0 012 1.75v18.85a1.87 1.87 0 01-2 1.87h-39.1v9.86H211a1.5 1.5 0 011.62 1.62l-.09 17.55a2.19 2.19 0 01-2.12 1.62l-25.87-.07v10.61z" style="mix-blend-mode:multiply"></path>
+    <path fill="#bf4097" d="M219.08 294c.37-1.25 1.25-1.62 2.24-1 5.74 3.25 12.61 5.62 17.35 6 4 0 6.62-1.87 6.62-4.74 0-7.36-35.08-7-35.08-34.2 0-16.73 12.61-27.84 31.58-27.84 8.87 0 20.1 3.62 28 9 1 .63 1.38 1.62 1 2.25l-7.86 17.6c-.38 1.25-1.25 1.62-2.25 1-6.11-3.5-13.23-6.12-17.6-6.49-3.87 0-6.36 1.74-6.36 4.49 0 7.36 35.32 6.86 35.32 34.33 0 16.6-12.86 27.71-32.08 27.71-10.48 0-21.47-3.25-27.71-8.24-1-.75-1.37-1.62-1-2.25z" style="mix-blend-mode:multiply"></path>
+  </g>
+</svg>

@@ -1,0 +1,64 @@
+<svg width="58" height="57" viewBox="0 -4 58 61" fill="none" xmlns="http://www.w3.org/2000/svg">
+<style>
+  .turn, .next {
+    transform-box: view-box;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+  }
+
+  /* Three right pages turn over the spine in quick, overlapping succession and land
+     on the left page, then the book rests. Plays once; at the end everything snaps
+     back to the starting layout, which looks identical. */
+  .turn { transform-origin: 28.52px 0; }
+  /* Only animate while the logo is hovered; each new hover replays it once */
+  svg:hover .a { animation-name: turn-a; }
+  svg:hover .b { animation-name: turn-b; }
+  svg:hover .c { animation-name: turn-c; }
+
+  @keyframes turn-a {
+    0%, 2%       { transform: translateY(0) scaleX(1); }
+    8%           { transform: translateY(-3px) scaleX(0.05); }
+    14%, 99.9%   { transform: translateY(0) scaleX(-1); }
+    100%         { transform: translateY(0) scaleX(1); }
+  }
+  @keyframes turn-b {
+    0%, 8%       { transform: translateY(0) scaleX(1); }
+    14%          { transform: translateY(-3px) scaleX(0.05); }
+    20%, 99.9%   { transform: translateY(0) scaleX(-1); }
+    100%         { transform: translateY(0) scaleX(1); }
+  }
+  @keyframes turn-c {
+    0%, 14%      { transform: translateY(0) scaleX(1); }
+    20%          { transform: translateY(-3px) scaleX(0.05); }
+    26%, 99.9%   { transform: translateY(0) scaleX(-1); }
+    100%         { transform: translateY(0) scaleX(1); }
+  }
+
+  /* Next page is hinged at the spine: it starts tucked behind the last turning page,
+     its outer edge lifts up as that page clears, then drops flat */
+  .next { transform-origin: 30.2px 24.8px; }
+  svg:hover .next { animation-name: next; }
+  @keyframes next {
+    0%, 14%      { transform: skewY(0deg) scale(0.6, 0.88); }
+    20%          { transform: skewY(-12deg) scale(0.7, 0.9); }
+    32%, 99.9%   { transform: skewY(0deg) scale(1, 1); }
+    100%         { transform: skewY(0deg) scale(0.6, 0.88); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .turn, .next { animation: none; }
+  }
+</style>
+<!-- Cover -->
+<path d="M50.4988 6.33398V39.958L28.4894 46.5146L6.58421 39.958V6.33398H0V50.3845H35.2524L49.2773 57.0006V50.4143H57.0458V6.33398H50.4988Z" fill="white"/>
+<!-- Left page -->
+<path d="M26.8436 43.2468V6.33333L9.42969 0V37.9256L26.8436 43.2468Z" fill="white"/>
+<!-- Next right page (hidden behind the turning pages until they move) -->
+<path class="next" d="M47.617 37.9256V0L30.2031 6.33333V43.2468L47.617 37.9256Z" fill="white"/>
+<!-- Turning right pages, bottom to top (a turns first) -->
+<path class="turn c" d="M47.617 37.9256V0L30.2031 6.33333V43.2468L47.617 37.9256Z" fill="white"/>
+<path class="turn b" d="M47.617 37.9256V0L30.2031 6.33333V43.2468L47.617 37.9256Z" fill="white"/>
+<path class="turn a" d="M47.617 37.9256V0L30.2031 6.33333V43.2468L47.617 37.9256Z" fill="white"/>
+</svg>
